@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Bejab · Terms of Use</title>
+<style>
+  :root {
+    --bg: #fbf6ff; --bg2: #f3e8ff; --ink: #2a1a3d; --muted: #6b5a80;
+    --gold: #9a7431; --gold-soft: rgba(224,192,136,.22); --lav: #7b4f93; --lav-soft: rgba(223,186,233,.35);
+    --card: rgba(255,255,255,.78); --stroke: rgba(88,60,99,.14); --shadow: 0 14px 34px -18px rgba(58,28,86,.35);
+    --hero1: #2d1b45; --hero2: #4c2f70; --hero3: #7a4a8f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #140c20; --bg2: #1d1330; --ink: #f2e8fc; --muted: #c5bad3;
+      --gold: #fedca2; --gold-soft: rgba(254,220,162,.12); --lav: #dfbae9; --lav-soft: rgba(223,186,233,.12);
+      --card: rgba(56,36,85,.42); --stroke: rgba(235,206,255,.16); --shadow: 0 16px 36px -16px rgba(0,0,0,.6);
+      --hero1: #221438; --hero2: #3a2358; --hero3: #5b3a78;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background:
+      radial-gradient(circle at 12% 30%, var(--lav-soft) 0, transparent 38%),
+      radial-gradient(circle at 92% 70%, var(--gold-soft) 0, transparent 40%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .serif { font-family: "Bodoni 72", "Didot", "Bodoni Moda", Georgia, serif; }
+  .rounded { font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; }
+
+  /* Hero */
+  .hero {
+    position: relative; overflow: hidden; color: #f8eaff;
+    padding: calc(env(safe-area-inset-top) + 34px) 24px 64px;
+    background: linear-gradient(150deg, var(--hero1) 0%, var(--hero2) 55%, var(--hero3) 100%);
+    border-radius: 0 0 36px 36px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; opacity: .55;
+    background-image:
+      radial-gradient(1.4px 1.4px at 12% 22%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 28% 68%, #fedca2 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 46% 16%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 62% 48%, #fff 50%, transparent 51%),
+      radial-gradient(1.3px 1.3px at 78% 26%, #fedca2 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 78%, #fff 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 8% 84%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 54% 88%, #fedca2 50%, transparent 51%);
+  }
+  .hero::after {
+    content: ""; position: absolute; width: 280px; height: 280px; right: -90px; top: -80px;
+    background: radial-gradient(circle, rgba(254,220,162,.35) 0, transparent 65%); filter: blur(6px);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; display: flex; gap: 22px; align-items: center; }
+  .hero-text { flex: 1; min-width: 0; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    font: 800 11px/1 ui-rounded, -apple-system, sans-serif; letter-spacing: .16em; text-transform: uppercase;
+    color: #fedca2; background: rgba(254,220,162,.14); border: 1px solid rgba(254,220,162,.3);
+    padding: 7px 11px; border-radius: 999px;
+  }
+  .eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: #fedca2; box-shadow: 0 0 8px #fedca2; }
+  h1 { margin: 14px 0 6px; font-size: 40px; line-height: 1.05; font-weight: 500; letter-spacing: -.01em; }
+  h1 em { font-style: italic; color: #fedca2; }
+  .lede { margin: 0; color: rgba(248,234,255,.82); font-size: 15px; max-width: 460px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .pill {
+    font: 600 12px/1 -apple-system, sans-serif; color: #f8eaff;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+    padding: 8px 11px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .hero-art { flex: 0 0 auto; width: 118px; filter: drop-shadow(0 18px 24px rgba(10,2,20,.55)); }
+  @media (max-width: 420px) { .hero-art { width: 88px; } h1 { font-size: 34px; } }
+
+  /* Tabs */
+  .tabs {
+    position: relative; z-index: 2; max-width: 360px; margin: -26px auto 0; display: flex; padding: 5px; gap: 4px;
+    background: var(--card); border: 1px solid var(--stroke); border-radius: 999px; box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  }
+  .tabs a {
+    flex: 1; text-align: center; text-decoration: none; padding: 11px 0; border-radius: 999px;
+    font: 700 14px/1 ui-rounded, -apple-system, sans-serif; color: var(--muted);
+  }
+  .tabs a.on { color: #402d03; background: linear-gradient(90deg, #fedca2, #e0c088); box-shadow: 0 6px 16px -6px rgba(224,192,136,.8); }
+
+  main { max-width: 760px; margin: 0 auto; padding: 26px 18px calc(env(safe-area-inset-bottom) + 40px); }
+
+  /* Glance */
+  .label { font: 800 11px/1 ui-rounded, -apple-system, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 8px 4px 12px; }
+  .glance { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media (min-width: 640px) { .glance { grid-template-columns: repeat(4, 1fr); } }
+  .tile {
+    background: var(--card); border: 1px solid var(--stroke); border-radius: 20px; padding: 14px;
+    box-shadow: var(--shadow); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  }
+  .tile svg { width: 30px; height: 30px; display: block; margin-bottom: 8px; }
+  .tile b { display: block; font: 700 14px/1.25 ui-rounded, -apple-system, sans-serif; }
+  .tile span { display: block; font-size: 12.5px; line-height: 1.4; color: var(--muted); margin-top: 3px; }
+
+  /* Sections */
+  .intro { margin: 22px 4px 6px; color: var(--muted); font-size: 15px; }
+  section {
+    position: relative; margin-top: 14px; padding: 18px 18px 16px 18px;
+    background: var(--card); border: 1px solid var(--stroke); border-radius: 24px; box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  }
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .num {
+    flex: 0 0 auto; width: 40px; height: 52px; border-radius: 9px; display: grid; place-items: center;
+    font: 600 15px/1 "Bodoni 72", Didot, Georgia, serif; color: #402d03;
+    background: linear-gradient(160deg, #fedca2, #d8b06f); box-shadow: inset 0 0 0 2px rgba(255,255,255,.45), 0 6px 14px -6px rgba(154,116,49,.7);
+  }
+  h2 { margin: 0; font: 700 18px/1.25 ui-rounded, -apple-system, sans-serif; }
+  .sec-sub { font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: .04em; margin-top: 2px; }
+  section p { margin: 8px 0; }
+  ul.list { list-style: none; padding: 0; margin: 10px 0 4px; }
+  ul.list li { position: relative; padding: 8px 0 8px 28px; border-top: 1px dashed var(--stroke); }
+  ul.list li:first-child { border-top: none; }
+  ul.list li::before {
+    content: "✦"; position: absolute; left: 4px; top: 8px; color: var(--gold); font-size: 13px;
+  }
+  .callout {
+    display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; padding: 12px 14px; border-radius: 16px;
+    background: var(--gold-soft); border: 1px solid rgba(224,192,136,.4); font-size: 14px;
+  }
+  .callout.lav { background: var(--lav-soft); border-color: rgba(123,79,147,.25); }
+  .callout svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 2px; }
+  .kbd {
+    font: 700 13px/1 ui-rounded, -apple-system, sans-serif; white-space: nowrap;
+    padding: 3px 8px; border-radius: 8px; color: var(--ink);
+    background: var(--lav-soft); border: 1px solid var(--stroke);
+  }
+  .danger { color: #d0526b; }
+  @media (prefers-color-scheme: dark) { .danger { color: #ff9eb0; } }
+
+  footer { text-align: center; margin: 34px 0 6px; color: var(--muted); font-size: 13px; }
+  footer .moon { font-size: 22px; color: var(--gold); letter-spacing: 10px; display: block; margin-bottom: 8px; }
+  footer strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow"><i></i>Bejab · Legal</span>
+      <h1 class="serif">Terms <em>of Use</em></h1>
+      <p class="lede">The simple agreement between you and your card journal: what Bejab is, how credits work, and what is yours.</p>
+      <div class="pills">
+        <span class="pill">✦ Effective Sep 30, 2026</span>
+        <span class="pill">☾ Version 1.0</span>
+        <span class="pill">⚜ 1 Credit per page set</span>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 120 170" aria-hidden="true">
+      <defs>
+        <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fedca2"/><stop offset="1" stop-color="#c79a57"/></linearGradient>
+        <linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2358"/><stop offset="1" stop-color="#1b0f2c"/></linearGradient>
+      </defs>
+      <g transform="rotate(8 60 85)">
+        <rect x="14" y="14" width="92" height="142" rx="10" fill="url(#cb)" stroke="url(#cg)" stroke-width="3"/>
+        <rect x="22" y="22" width="76" height="126" rx="6" fill="none" stroke="#fedca2" stroke-opacity=".5"/>
+        <circle cx="60" cy="76" r="24" fill="none" stroke="url(#cg)" stroke-width="2.5"/>
+        <g stroke="url(#cg)" stroke-width="2.5" stroke-linecap="round">
+          <path d="M60 42v-8M60 118v-8M26 76h8M86 76h8M36 52l5 5M79 95l5 5M84 52l-5 5M41 95l-5 5"/>
+        </g>
+        <circle cx="60" cy="76" r="9" fill="url(#cg)"/>
+        <path d="M44 132h32" stroke="#fedca2" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 26l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Legal documents">
+  <a href="privacy.html">Privacy Policy</a>
+  <a class="on" href="terms.html" aria-current="page">Terms of Use</a>
+</nav>
+
+<main>
+  <div class="label">At a glance</div>
+  <div class="glance">
+    <div class="tile">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#c79a57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12l4 4v20H8z"/><path d="M12 14h8M12 19h8M12 24h5"/></svg>
+      <b>A journal, not a prophecy</b><span>No predictions or guaranteed results.</span>
+    </div>
+    <div class="tile">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#9b6bb3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-5 5.5-8 10-8s8.5 3 10 8"/></svg>
+      <b>Your content is yours</b><span>You own every photo, entry and page.</span>
+    </div>
+    <div class="tile">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#c79a57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+      <b>Pay only for pages</b><span>Writing and previewing are always free.</span>
+    </div>
+    <div class="tile">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#9b6bb3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M26 16a10 10 0 1 1-3-7"/><path d="M26 5v6h-6"/></svg>
+      <b>No charge on failure</b><span>Cancelled or failed pages cost nothing.</span>
+    </div>
+  </div>
+
+  <p class="intro">These Terms of Use govern your use of the Bejab app ("Bejab"). By tapping <span class="kbd">Enter</span> and using the app, you agree to these terms and to the Bejab Privacy Policy.</p>
+
+  <section>
+    <div class="sec-head"><div class="num">I</div><div><h2>What Bejab is</h2><div class="sec-sub">A reflection tool</div></div></div>
+    <p>Bejab is a personal journal for physical tarot cards you draw yourself. You can photograph a card or choose it manually, confirm its name, write your question, card meaning, and reflection, and generate reading pages grouped by date.</p>
+    <div class="callout lav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <div>Bejab is a reflection and record-keeping tool only. It does not provide predictions, fortune telling, advice, or any guarantee of results. Card meanings are notes you write yourself.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">II</div><div><h2>Your content</h2><div class="sec-sub">Full ownership</div></div></div>
+    <p>You keep full ownership of your card photos, entries, and generated pages. Your content stays on your device. You are responsible for keeping your own copies, for example by using <span class="kbd">Save Image</span>.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">III</div><div><h2>Local session</h2><div class="sec-sub">One tap, no password</div></div></div>
+    <p>Bejab uses a one-tap local session on this device. There is no username, password, or Apple ID sign-in.</p>
+    <ul class="list">
+      <li><span class="kbd">Log Out</span> keeps your data on the device.</li>
+      <li><span class="kbd">Delete Account</span> permanently erases all Bejab data on this device, including remaining credits.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">IV</div><div><h2>Sheet Credits</h2><div class="sec-sub">Shown as Sparks</div></div></div>
+    <ul class="list">
+      <li>Sheet Credits are consumable in-app purchases sold through Apple's App Store. Prices are shown by Apple before you confirm.</li>
+      <li>Generating one set of reading pages uses 1 credit. Adding, editing, previewing, and reviewing entries are free.</li>
+      <li>Credits are deducted only after the pages are fully saved. If generation fails or you cancel it, no credit is used.</li>
+      <li>Credits are stored on this device, have no cash value, are not transferable, and cannot be restored after the app is removed or its data is cleared.</li>
+      <li>Refunds are handled by Apple. If Apple refunds a purchase, unused credits from that purchase are removed; pages you already generated are kept.</li>
+    </ul>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+      <div>Bejab always asks before using a credit: <strong>Use 1 Spark &amp; Keep</strong> or <strong>Don't Use Sparks</strong>.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">V</div><div><h2>Acceptable use</h2><div class="sec-sub">Personal &amp; lawful</div></div></div>
+    <p>Use Bejab only for lawful, personal purposes. Do not attempt to reverse engineer or interfere with the app or with App Store purchases.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">VI</div><div><h2>Disclaimer</h2><div class="sec-sub">Provided as is</div></div></div>
+    <p>Bejab is provided "as is". To the fullest extent permitted by law, Bejab disclaims all warranties and is not liable for any decisions you make based on your readings or reflections, or for loss of data stored on your device.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">VII</div><div><h2>Changes</h2><div class="sec-sub">Always dated</div></div></div>
+    <p>We may update these terms. The current version is always available inside the app and at this address.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="num">✉</div><div><h2>Contact</h2><div class="sec-sub">Bejab</div></div></div>
+    <p>Questions about these terms can be sent through the App Store support page for Bejab.</p>
+  </section>
+
+  <footer>
+    <span class="moon">☽ ✦ ☾</span>
+    <strong>Bejab</strong> · A personal reflection record, not a prediction.<br>
+    © 2026 Bejab
+  </footer>
+</main>
+</body>
+</html>
